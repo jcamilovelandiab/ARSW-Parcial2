@@ -39,13 +39,15 @@
 </head>
 <body style="background-color: rgb(0, 0, 0);">
 
-
-
-	<div class="container">
-		<div class="jumbotron">
+	<div class="jumbotron">
 			<h1>Weathers</h1>
 			<p>Find out the weather from a city</p>
-		</div>
+	</div>
+
+	<div class="container">
+		
+
+	
 
 		<!-- form class="form-inline">
 			<label for="city" class="mr-sm-2">City:</label>
@@ -66,11 +68,23 @@
             <button type="button" class="btn btn-light" onclick="app.getWeatherByCityName($('#input').val())">Search</button>
             
         </form>
+        
+        <br> 	
+       	<div class="table-responsive table-light">
+           <table id="tableCity" class="table table-hover">
+               <thead>
+                   <tr>
+                       <th>Coordinates</th>
+                       <th>Weather</th>
+                       <th>Humidity</th>
+                       <th>Pressure</th>
+                       <th>Temperature</th>
+                   </tr>
+               </thead>
 
-
+           </table>
+        
 	</div>
-
-	<br></br>
 
 </body>
 </html>
