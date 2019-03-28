@@ -33,8 +33,8 @@ public class WeatherController {
 	@RequestMapping(value = "/{namecity}", method = RequestMethod.GET)
 	public ResponseEntity<?> getCityByName(@PathVariable String namecity){
 		try {
-			//return new ResponseEntity<>(weatherServices.getCityByName(namecity), HttpStatus.OK);
-			return new ResponseEntity<>(HttpConnectionExample.getWeather(namecity), HttpStatus.OK);
+			return new ResponseEntity<>(weatherServices.getCityByName(namecity), HttpStatus.OK);
+			//return new ResponseEntity<>(HttpConnectionExample.getWeather(namecity), HttpStatus.OK);
 		}catch(Exception e) {
 			return new ResponseEntity<>("ERROR", HttpStatus.NOT_FOUND);
 		}

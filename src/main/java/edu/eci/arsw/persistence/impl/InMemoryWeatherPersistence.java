@@ -20,8 +20,8 @@ public class InMemoryWeatherPersistence implements WeatherPersistence{
 	
 	InMemoryWeatherPersistence(){
 		
-		City c = new City("bogota", "frio");
-		cities.put(c.getName(), c);
+		//City c = new City("bogota", "frio");
+		//cities.put(c.getName(), c);
 		
 	}
 	
