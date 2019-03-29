@@ -12,6 +12,7 @@ app=(function(){
 				$("#tableCity > tr").remove();
 				
 				table.append('<tr>' + 
+						"<td>"+info.sys.country+"</td>"+
 						"<td> lat -> "+info.coord.lat+" ,lon -> "+info.coord.lon+"</td>" + 
 						"<td>"+info.weather[0].description+"</td>" + 
 						"<td>"+info.main.humidity+"</td>"+ 

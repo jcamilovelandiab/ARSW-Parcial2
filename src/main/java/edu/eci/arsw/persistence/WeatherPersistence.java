@@ -7,7 +7,9 @@ import edu.eci.arsw.entities.City;
 public interface WeatherPersistence {
 
 	/**
-	 * Consulta una ciudad dada su nombre
+	 * Consulta una ciudad dada su nombre, si la ciudad que se va a consultar ya esta
+	 * en memoria y su creacion fue hace mas de 5 minutos, se vuelve a consultar el estado
+	 * del clima de la ciudad.
 	 * 
 	 * @param namecity
 	 * @return

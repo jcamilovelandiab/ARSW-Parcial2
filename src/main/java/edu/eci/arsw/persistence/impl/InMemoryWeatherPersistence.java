@@ -1,5 +1,6 @@
 package edu.eci.arsw.persistence.impl;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -28,6 +29,15 @@ public class InMemoryWeatherPersistence implements WeatherPersistence{
 	@Override
 	public City getCityByName(String namecity) throws WeatherPersistenceException {
 		if(cities.containsKey(namecity)) {
+			Date currentDate = new Date();
+			City c = cities.get(namecity);
+			long diff = (currentDate.getTime()-c.getDate().getTime());
+			long minutes = diff / (60 * 1000) % 60;
+			if(minutes>=5) {
+				String weather = HttpConnectionExample.getWeather(namecity);
+				c.setWeather(weather);
+			}
+			
 			return cities.get(namecity);
 		}else {
 			String weather = HttpConnectionExample.getWeather(namecity);
